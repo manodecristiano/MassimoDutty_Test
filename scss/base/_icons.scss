@@ -1,0 +1,55 @@
+@import "../abstract/_all.scss";
+
+.ico-big {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    border: 1px solid $c-middle-grey;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.ico {
+    svg {
+        display: inline-block;
+        margin-right: 4px;
+        vertical-align: middle;
+    }
+}
+
+// soporte para estilos de color iconos con el componente svg-icon
+
+svg-icon {
+    &.c-invert {
+        fill: $c-white;
+    }
+
+    &.ico-white,
+    &.c-invert {
+        path {
+            fill: $c-white;
+        }
+    }
+
+    &.ico-error {
+        path {
+            fill: $c-error;
+        }
+    }
+
+    &.ico-success {
+        path {
+            fill: $c-valid;
+        }
+    }
+}
+
+
+.has-light{
+    svg {
+        path {
+            fill: white;
+            stroke: none;
+        }
+    }
+}

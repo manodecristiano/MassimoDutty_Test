@@ -1,0 +1,120 @@
+@import "../abstract/_all.scss";
+
+
+//   -HTML REMS        
+ 
+ body{
+  font-family: $font-family-primary;
+ }
+
+
+ pre,
+code,
+kbd,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
+body {
+  @include font-regular;
+  -webkit-overflow-scrolling: touch;
+  font-variant-ligatures: no-common-ligatures !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+select {
+  @include font-medium();
+}
+
+
+//   -HEADERS ELÁSTICOS        
+ 
+p {
+  @include font-medium();
+  margin: 0;
+  font-size: 14px;
+
+  &.b {
+    @include font-medium();
+    color: $c-primary;
+  }
+}
+a {
+  color: $c-primary;
+  text-decoration: none; }
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.p1 {
+  span {
+    color: $c-primary;
+  }
+}
+
+b,
+mark {
+  color: $c-primary;
+  @include font-bold()
+}
+
+
+//   -LINKS        
+ 
+
+
+
+//   -FLUID TEXT   Desde min_width   hasta  break-lg  <--->  font-minima hasta font-maxima
+ 
+ 
+
+.secondary{
+  font-family:$font-family-secondary !important;
+  font-weight: 100;
+}
+
+
+
+
+@include typesFixers($headersFixers, $fs);
+@include types($breakpoints, $headers, $fs);
+
+@include typesFluids($headersFluids) ;
+
+.text-light{@include font-light();}
+.text-regular{@include font-regular();}
+.text-medium{ @include font-medium();}
+.text-bold{ @include font-bold();}
+
+
+//   -TACHADO        
+ 
+
+ .is-through{
+	position: relative;
+	width: max-content;
+	&::after{
+	content: "";
+    background-color: $c-primary;
+    width: 100%;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    height: 1px;
+	}
+}
+.c-gray.is-through{
+  &::after{
+      background-color: $c-dark-grey;
+    }
+}
